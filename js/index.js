@@ -7,12 +7,13 @@ const showImage = (err, res) => {
 }
 
 const getImage = () => {
-  showImage(null, { 
-    body: { 
-      title: 'DEMO', 
-      explanation: 'DEMO' 
-    } 
-  })
-}
+  const NASA = 'https://api.nasa.gov/planetary/apod?api_key='
+  const KEY = '2K4cczVOU884jfquXdOfq807bBXvEwhMmHs55987'
+    request
+      .get(`${NASA}${KEY}`)
+      .end(showImage)
+  }
 
 document.addEventListener('DOMContentLoaded', getImage)
+
+//2K4cczVOU884jfquXdOfq807bBXvEwhMmHs55987
